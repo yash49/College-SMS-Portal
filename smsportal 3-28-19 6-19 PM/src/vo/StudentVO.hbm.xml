@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="vo.StudentVO" table="student">
+
+		<id name="studentId" type="int" column="studentId">
+			<generator class="increment"/>
+		</id>
+
+		<property name="studentFirstName">
+			<column name="studentFirstName"/>
+		</property>
+		
+		<property name="studentLastName">
+			<column name="studentLastName"/>
+		</property>
+		
+		<property name="studentMobile">
+			<column name="studentMobile"/>
+		</property>				
+		
+		<property name="studentEmail">
+			<column name="studentEmail"/>
+		</property>			
+		
+		<property name="studentGender">
+			<column name="studentGender"/>
+		</property>	
+		
+		<property name="studentEnrollmentNumber">
+			<column name="studentEnrollmentNumber"/>
+		</property>	
+		
+		<property name="studentShift">
+			<column name="studentShift"/>
+		</property>	
+		
+		<many-to-one lazy="false" name="branchVO" class="vo.BranchVO" column="branchId"></many-to-one>
+		<many-to-one lazy="false" name="semesterVO" class="vo.SemesterVO" column="semesterId"></many-to-one>
+		<many-to-one lazy="false" name="classVO" class="vo.ClassVO" column="classId"></many-to-one>
+		<many-to-one lazy="false" name="loginVO" class="vo.LoginVO" column="loginId"></many-to-one>
+		
+</class>
+
+</hibernate-mapping>

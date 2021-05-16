@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="vo.SmsHistoryVO" table="smsHistory">
+
+		<id name="smsHistoryId" type="int" column="smsHistoryId">
+			<generator class="increment"/>
+		</id>
+
+		<property name="mobileNo">
+			<column name="mobileNo"/>
+		</property>
+		
+		<property name="message">
+			<column name="message"/>
+		</property>
+		
+		<property name="senderId">
+			<column name="senderId"/>
+		</property>				
+
+		<many-to-one lazy="false" name="loginVO" class="vo.LoginVO" column="loginId"></many-to-one>
+		
+		<property name="date">
+			<column name="date"/>
+		</property>		
+</class>
+
+</hibernate-mapping>

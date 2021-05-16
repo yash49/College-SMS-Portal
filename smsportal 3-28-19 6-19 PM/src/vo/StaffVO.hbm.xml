@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="vo.StaffVO" table="staff">
+
+		<id name="staffId" type="int" column="staffId">
+			<generator class="increment"/>
+		</id>
+
+		<property name="staffFirstName">
+			<column name="staffFirstName"/>
+		</property>
+		
+		<property name="staffLastName">
+			<column name="staffLastName"/>
+		</property>
+		
+		<property name="staffMobile">
+			<column name="staffMobile"/>
+		</property>				
+		
+		<property name="staffGender">
+			<column name="staffGender"/>
+		</property>	
+		
+		<property name="staffDesignation">
+			<column name="staffDesignation"/>
+		</property>
+		
+		<property name="staffBranch">
+			<column name="staffBranch"/>
+		</property>				
+		
+		<property name="staffAddress">
+			<column name="staffAddress"/>
+		</property>
+		
+		
+		<many-to-one lazy="false" name="loginVO" class="vo.LoginVO" column="loginId"></many-to-one>
+		
+</class>
+
+</hibernate-mapping>

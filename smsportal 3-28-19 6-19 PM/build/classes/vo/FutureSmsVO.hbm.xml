@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	
+	<class name="vo.FutureSmsVO" table="futureSms">
+
+		<id name="futureSmsId" type="int" column="futureSmsId">
+			<generator class="increment"/>
+		</id>
+
+		<property name="mobile">
+			<column name="mobile"/>
+		</property>
+		
+		<property name="message">
+			<column name="message"/>
+		</property>
+		
+		<property name="senderId">
+			<column name="senderId"/>
+		</property>
+		
+		<property name="timestamp" type="long">
+			<column name="timestamp"/>
+		</property>
+		
+		<property name="isSent">
+			<column name="isSent"/>
+		</property>
+		
+		<many-to-one lazy="false" name="loginVO" class="vo.LoginVO" column="loginId"></many-to-one>
+				
+</class>
+
+</hibernate-mapping>
